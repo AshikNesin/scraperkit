@@ -1,9 +1,6 @@
 const {x} = require('./wrappers/x-ray')
 const axios = require('./wrappers/axios')
-
-const {
-    setProxyUrl,
-} = require('./utils/proxy')
+import { setProxyUrl } from "./utils/proxy";
 
 
 module.exports = {

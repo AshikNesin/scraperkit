@@ -1,0 +1,12 @@
+{
+	"extends": "@sindresorhus/tsconfig",
+	"compilerOptions": {
+		"baseUrl": ".",
+		"declaration": false,
+		"allowJs": true,
+		"outDir": "dist",
+		"lib": ["es2018"],
+		"sourceMap": false
+	},
+	"include": ["./src/**/*"]
+}

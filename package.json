@@ -2,14 +2,21 @@
 	"name": "scraperkit",
 	"version": "0.0.1",
 	"description": "",
-	"main": "src/index.js",
+	"main": "dist/index.js",
 	"scripts": {
+		"build": "del dist && tsc",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
+	"files": [
+		"dist"
+	],
 	"keywords": [],
 	"author": "Ashik Nesin <mail@ashiknesin.com>",
 	"license": "ISC",
-	"devDependencies": {},
+	"devDependencies": {
+		"@sindresorhus/tsconfig": "^0.2.0",
+		"del-cli": "^1.1.0"
+	},
 	"dependencies": {
 		"axios": "^0.18.0",
 		"cheerio": "^1.0.0-rc.2",
