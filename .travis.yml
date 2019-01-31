@@ -9,5 +9,5 @@ deploy:
   provider: npm
   email: mail@ashiknesin.com
   api_key: $NPM_TOKEN
-  on:
-    tags: true
+  # on:
+  #   tags: true
