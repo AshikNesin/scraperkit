@@ -1,0 +1,8 @@
+language: node_js
+script:
+  - npm run install
+  - npm run build
+ deploy:
+ api_key: $NPM_TOKEN
+ email: mail@ashiknesin.com
+ provider: npm
