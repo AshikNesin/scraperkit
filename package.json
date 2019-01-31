@@ -1,6 +1,6 @@
 {
 	"name": "scraperkit",
-	"version": "0.0.1",
+	"version": "0.0.2-alpha.0",
 	"description": "",
 	"main": "dist/index.js",
 	"scripts": {
@@ -22,8 +22,6 @@
 		"cheerio": "^1.0.0-rc.2",
 		"debug": "^4.1.1",
 		"https-proxy-agent": "^2.2.1",
-		"puppeteer": "^1.11.0",
-		"request": "^2.88.0",
 		"x-ray": "^2.3.3"
 	}
 }

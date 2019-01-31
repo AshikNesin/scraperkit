@@ -117,3 +117,4 @@ Temporary Items
 node_modules
 yarn.lock
 dist
+.cache
