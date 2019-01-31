@@ -1,35 +1,35 @@
-// global.proxyUrl = null;
+let proxyUrl = null;
 
-// const getProxyUrl = () => {
-//     console.log({getProxyUrl:proxyUrl})
-//    return global.proxyUrl;
-// }
-// const setProxyUrl = proxy => {
-//     console.log({setProxyUrl:proxy})
-//     global.proxyUrl = proxy;
-// }
-
-// module.exports = {
-//     getProxyUrl,
-//     setProxyUrl,
-//     proxyUrl
-// }
-
-let proxyUrl = null
-class Proxy {
-
-    // constructor(){
-    // this.proxyUrl = null;
-    // }
-    getProxyUrl(){
-        return proxyUrl;
-    }
-
-    setProxyUrl(newProxyUrl){
-        console.log({newProxyUrl})
-        proxyUrl = newProxyUrl
-        return proxyUrl
-    }
+const getProxyUrl = () => {
+    console.log({getProxyUrl:proxyUrl})
+   return proxyUrl;
+}
+const setProxyUrl = proxy => {
+    console.log({setProxyUrl:proxy})
+    proxyUrl = proxy;
 }
 
-module.exports = Proxy
+module.exports = {
+    getProxyUrl,
+    setProxyUrl,
+    proxyUrl
+}
+
+// let proxyUrl = null
+// class Proxy {
+
+//     // constructor(){
+//     // this.proxyUrl = null;
+//     // }
+//     getProxyUrl(){
+//         return proxyUrl;
+//     }
+
+//     setProxyUrl(newProxyUrl){
+//         console.log({newProxyUrl})
+//         proxyUrl = newProxyUrl
+//         return proxyUrl
+//     }
+// }
+
+// module.exports = Proxy
