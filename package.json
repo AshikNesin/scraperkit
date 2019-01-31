@@ -1,0 +1,20 @@
+{
+	"name": "scraperkit",
+	"version": "0.0.1",
+	"description": "",
+	"main": "src/index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [],
+	"author": "Ashik Nesin <mail@ashiknesin.com>",
+	"license": "ISC",
+	"devDependencies": {},
+	"dependencies": {
+		"axios": "^0.18.0",
+		"cheerio": "^1.0.0-rc.2",
+		"https-proxy-agent": "^2.2.1",
+		"request": "^2.88.0",
+		"x-ray": "^2.3.3"
+	}
+}
