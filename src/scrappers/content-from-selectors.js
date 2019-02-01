@@ -17,15 +17,18 @@ const getContentFromSelectors = async ({selectors, htmlContent = null, url, requ
 			const text = $(item.selector).text();
 			payload[item.label] = text;
 			if ('between' in item && ('after' in item.between || 'before' in item.between)) {
-				payload[item.label] = text.match(`${item.between.after || ''}(.*)${item.between.before || ''}`)[1];
+				const regex = `${item.between.after || ''}(.*)${item.between.before || ''}`;
+				const regexResult = text.match(regex);
+				if (regexResult.length > 2) {
+					payload[item.label] = regexResult[1];
+				}
 			}
-
 			if ('regex' in item) {
 				payload[item.label] = null;
-				try {
-					payload[item.label] = text.match(item.regex)[1];
-				} catch (e) {
-					console.log(e);
+				const {regex} = item;
+				const regexResult = text.match(regex);
+				if (regexResult.length > 2) {
+					payload[item.label] = regexResult[1];
 				}
 			}
 		} catch (err) {
