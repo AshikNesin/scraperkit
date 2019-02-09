@@ -10,3 +10,5 @@ export const axiosDriver = (opts = {}) => {
 		}).catch((err:any) => callback(err, null));
 	};
 }
+
+export default axiosDriver;
