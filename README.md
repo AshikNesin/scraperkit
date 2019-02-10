@@ -1,8 +1,18 @@
 ```js
+const { awsUtils } = require('scraperkit');
+const { addToQueue, moveQueueItems } = awsUtils;
+
 await addToQueue({
 	payload: [],
-	queueURL: 'https://sqs.us-east-1.amazonaws.com/xxxx/QueueName'
+	queueUrl: 'https://sqs.us-east-1.amazonaws.com/xxxx/QueueName'
 });
+
+const app = await moveQueueItems({
+	sourceQueueUrl: 'https://sqs.us-east-1.amazonaws.com/xxxx/QueueName',
+	targetQueueUrl: 'https://sqs.us-east-1.amazonaws.com/xxxx/QueueName'
+});
+
+app.start();
 ```
 
 ```js

@@ -1,6 +1,6 @@
 {
 	"name": "scraperkit",
-	"version": "0.0.2-alpha.09",
+	"version": "0.0.2-alpha.10",
 	"description": "",
 	"main": "dist/index.js",
 	"scripts": {
@@ -27,6 +27,7 @@
 		"debug": "^4.1.1",
 		"https-proxy-agent": "^2.2.1",
 		"ow": "^0.11.1",
+		"sqs-consumer": "^4.1.0",
 		"x-ray": "^2.3.3"
 	}
 }
