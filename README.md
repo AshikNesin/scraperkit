@@ -1,4 +1,28 @@
 ```js
+const { getHTMLContent } = require('scraperkit');
+
+const content = await getHTMLContent({
+	url: 'https://www.yellowpages.com.sg/company/bedok-transport-pte-ltd',
+	puppeteerOptions: {
+		launchOptions: config.puppeteerLaunchOptions,
+		gotoOptions: {
+			// some options to pass to .goto()
+			waitUntil: 'networkidle0',
+			timeout: 600000
+		},
+		waitForSelector: '.inner-company-info',
+		waitForSelectorOptions: {
+			timeout: 600000
+		}
+	},
+	proxy: {
+		username: config.proxy.username,
+		password: config.proxy.password
+	}
+});
+```
+
+```js
 const { awsUtils } = require('scraperkit');
 const { addToQueue, moveQueueItems } = awsUtils;
 

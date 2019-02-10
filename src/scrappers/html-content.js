@@ -12,7 +12,6 @@ const getHTMLContent = async ({
 	url,
 	prerender = true,
 	puppeteerOptions = {},
-	waitForSelector,
 	proxy = {},
 }) => {
 	// TODO: Implement Non-Prerender sites
@@ -29,37 +28,43 @@ const getHTMLContent = async ({
 		};
 	}
 
-	if (!('waitForSelectorOptions' in config)) {
-		config.waitForSelectorOptions = {};
-	}
+	// if (!('waitForSelectorOptions' in config)) {
+	// 	config.waitForSelectorOptions = {};
+	// }
 
 	const browser = await puppeteer.launch(config.launchOptions);
 	const page = await browser.newPage();
 
-	if ('username' in proxy && 'password' in proxy) {
-		await page.authenticate({
-			username: proxy.username,
-			password: proxy.password,
-		});
-		debug('Proxy authenticated');
+	try {
+		if ('username' in proxy && 'password' in proxy) {
+			await page.authenticate({
+				username: proxy.username,
+				password: proxy.password,
+			});
+			debug('Proxy authenticated');
+		}
+
+		await page.goto(url, config.gotoOptions);
+
+		if (typeof puppeteerOptions.waitForSelector === 'string') {
+			await page.waitFor(puppeteerOptions.waitForSelector);
+		}
+
+		const htmlContent = await page.content();
+
+		debug(
+			'got response from %s, content length: %s',
+			url,
+			(htmlContent || '').length
+		);
+		return htmlContent;
+	} catch (e) {
+		console.log(e);
+		console.log(e.message);
+	} finally {
+		await page.close();
+		await browser.close();
 	}
-
-	if (typeof puppeteerOptions.waitForSelector === 'string') {
-		await page.waitFor(waitForSelector, config.waitForSelectorOptions);
-	}
-
-	const htmlContent = await page.content();
-
-	debug(
-		'got response from %s, content length: %s',
-		url,
-		(htmlContent || '').length
-	);
-
-	await page.close();
-	await browser.close();
-
-	return htmlContent;
 };
 
 module.exports = getHTMLContent;
