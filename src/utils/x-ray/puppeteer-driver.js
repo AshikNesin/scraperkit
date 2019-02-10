@@ -6,7 +6,11 @@ const puppeteer = require('puppeteer');
 const driver = ({
 	launchOptions = {
 		headless: true,
-		args: ['--no-sandbox', '--disable-gpu', '--single-process'],
+		args: [
+			'--no-sandbox',
+			'--disable-gpu',
+			'--single-process',
+		],
 	},
 	gotoOptions = {
 		waitUntil: 'networkidle0',

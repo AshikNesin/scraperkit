@@ -1,12 +1,13 @@
 {
 	"name": "scraperkit",
-	"version": "0.0.2-alpha.04",
+	"version": "0.0.2-alpha.09",
 	"description": "",
 	"main": "dist/index.js",
 	"scripts": {
 		"dev": "tsc -w",
 		"build": "del dist && tsc",
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"prepublish": "npm run build"
 	},
 	"files": [
 		"dist"

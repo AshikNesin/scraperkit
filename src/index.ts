@@ -1,13 +1,9 @@
-// const axios = require('./wrappers/axios')
-// import { setProxyUrl } from "./utils/proxy";
 import { getContentFromSelectors } from "./scrappers/content-from-selectors";
-import xRayPuppeteerDriver from './drivers/x-ray/puppeteer-driver'
-import xRayAxiosDriver from './drivers/x-ray/axios-driver'
+import xRayUtils from './utils/x-ray'
+import awsUtils from './utils/aws'
 
 module.exports = {
-    // axios,
-    // setProxyUrl,
     getContentFromSelectors,
-    xRayAxiosDriver,
-    xRayPuppeteerDriver
+    xRayUtils,
+    awsUtils
 };
