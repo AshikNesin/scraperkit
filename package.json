@@ -1,6 +1,6 @@
 {
 	"name": "scraperkit",
-	"version": "0.0.2-alpha.10",
+	"version": "0.0.2-alpha.11",
 	"description": "",
 	"main": "dist/index.js",
 	"scripts": {
