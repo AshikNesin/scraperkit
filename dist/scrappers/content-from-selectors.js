@@ -22,7 +22,7 @@ const getContentFromSelectors = ({ selectors, htmlContent = null, url, requestCo
         payload[item.label] = null;
         try {
             const text = $(item.selector).text();
-            payload[item.label] = text;
+            payload[item.label] = text.replace('\n', '').trim();
             if ('between' in item && ('after' in item.between || 'before' in item.between)) {
                 const regex = `${item.between.after || ''}(.*)${item.between.before || ''}`;
                 const regexResult = text.match(regex);
