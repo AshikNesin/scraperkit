@@ -1,11 +1,5 @@
-import { getContentFromSelectors } from "./scrappers/content-from-selectors";
-import  getHTMLContent from "./scrappers/html-content";
-import xRayUtils from './utils/x-ray'
-import awsUtils from './utils/aws'
+import getHTML from './utils/get-html';
 
 module.exports = {
-    getHTMLContent,
-    getContentFromSelectors,
-    xRayUtils,
-    awsUtils
+    getHTML
 };
